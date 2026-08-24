@@ -1,3 +1,4 @@
+import { MapPin } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { waLink, MESSAGES } from "@/lib/darna";
 import coast from "@/assets/coast.jpg";
@@ -8,49 +9,49 @@ import chefchaouen from "@/assets/chefchaouen-city.jpg";
 const ACTIVITIES = [
   {
     title: "Scuba Diving",
-    location: "📍 Mdiq & Belyounech, Tetouan region",
+    location: "Mdiq & Belyounech, Tetouan region",
     text: "Scuba diving with certified instructors along Morocco's northern coast.",
     img: coast,
   },
   {
     title: "Boat Trip",
-    location: "📍 Marina Smir & Mdiq",
+    location: "Marina Smir & Mdiq",
     text: "Sea trips along the northern coast of Morocco.",
     img: coast,
   },
   {
     title: "Jet Ski",
-    location: "📍 Tetouan Region",
+    location: "Tetouan Region",
     text: "Explore the Mediterranean around Cabo Negro and the northern coast.",
     img: coast,
   },
   {
     title: "Surf",
-    location: "📍 Tangier",
+    location: "Tangier",
     text: "Guided surfing sessions for different levels.",
     img: coast,
   },
   {
     title: "Quad & Buggy",
-    location: "📍 Tangier · Tetouan · Chefchaouen · Akchour",
+    location: "Tangier · Tetouan · Chefchaouen · Akchour",
     text: "Off-road adventures through mountains, forests and natural landscapes.",
     img: mountains,
   },
   {
     title: "Home Massage",
-    location: "📍 Tangier & Tetouan",
+    location: "Tangier & Tetouan",
     text: "Professional massage delivered directly to your accommodation.",
     img: riad,
   },
   {
     title: "Escape Room",
-    location: "📍 Tangier",
+    location: "Tangier",
     text: "Themed escape experiences for friends, couples and groups.",
     img: chefchaouen,
   },
   {
     title: "Tennis & Padel",
-    location: "📍 Tangier & Tetouan",
+    location: "Tangier & Tetouan",
     text: "Reserve courts at a convenient time.",
     img: riad,
   },
@@ -68,7 +69,7 @@ const ACTIVITIES = [
   },
   {
     title: "Hiking",
-    location: "📍 Tangier · Tetouan · Chefchaouen · Akchour",
+    location: "Tangier · Tetouan · Chefchaouen · Akchour",
     text: "Explore the Rif Mountains, forests, waterfalls and natural landscapes.",
     img: mountains,
   },
@@ -127,7 +128,10 @@ export function Activities() {
               </div>
               <div className="flex flex-1 flex-col p-7">
                 <h3 className="font-display text-2xl text-deep">{a.title}</h3>
-                <p className="mt-2 text-xs tracking-wide text-primary">{a.location}</p>
+                <p className="mt-2 inline-flex items-center gap-1.5 text-xs tracking-wide text-primary">
+                  <MapPin className="h-3.5 w-3.5" strokeWidth={1.5} />
+                  {a.location}
+                </p>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
                 <a
                   href={waLink(MESSAGES.activity(a.title))}

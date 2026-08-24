@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Home, Waves, Car, Compass, MessageCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
@@ -13,11 +14,11 @@ const EXAMPLES = [
 ];
 
 const PILLARS = [
-  { emoji: "🏡", label: "Accommodation" },
-  { emoji: "🌊", label: "Activities" },
-  { emoji: "🚗", label: "Transportation" },
-  { emoji: "🧭", label: "Excursions" },
-  { emoji: "💬", label: "Personal assistance" },
+  { icon: Home, label: "Accommodation" },
+  { icon: Waves, label: "Activities" },
+  { icon: Car, label: "Transportation" },
+  { icon: Compass, label: "Excursions" },
+  { icon: MessageCircle, label: "Personal assistance" },
 ];
 
 export function CustomMade() {
@@ -87,7 +88,7 @@ export function CustomMade() {
                 key={p.label}
                 className="inline-flex items-center gap-2 border border-border bg-card px-5 py-3 text-xs uppercase tracking-[0.16em] text-deep/80"
               >
-                <span aria-hidden="true">{p.emoji}</span>
+                <p.icon className="h-4 w-4 text-terracotta" strokeWidth={1.4} />
                 {p.label}
               </span>
             ))}
