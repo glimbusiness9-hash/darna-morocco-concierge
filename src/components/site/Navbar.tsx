@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/darna-logo.png.asset.json";
 
 const LINKS = [
   { label: "Home", href: "#home" },

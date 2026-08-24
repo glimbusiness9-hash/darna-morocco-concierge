@@ -1,6 +1,7 @@
 import { Instagram } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
+import logoAsset from "@/assets/darna-logo.png.asset.json";
 
 const LINKS = [
   { label: "Services", href: "#services" },
