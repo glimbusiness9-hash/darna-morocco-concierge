@@ -1,6 +1,7 @@
 import { Instagram } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
+import logoAsset from "@/assets/darna-logo.png.asset.json";
 
 const LINKS = [
   { label: "Services", href: "#services" },
@@ -18,7 +19,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <p className="font-display text-4xl">darna</p>
+            <img
+              src={logoAsset.url}
+              alt="darna"
+              className="h-12 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm text-deep-foreground/70">
               Your personal concierge for Morocco.
             </p>

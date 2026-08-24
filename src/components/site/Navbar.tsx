@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/darna-logo.png.asset.json";
 
 const LINKS = [
   { label: "Home", href: "#home" },
@@ -49,11 +50,15 @@ export function Navbar() {
         <a
           href="#home"
           className={cn(
-            "font-display text-3xl leading-none tracking-tight transition-colors",
-            solid ? "text-deep" : "text-onmedia",
+            "flex items-center transition-opacity",
+            solid ? "opacity-100" : "opacity-100",
           )}
         >
-          darna
+          <img
+            src={logoAsset.url}
+            alt="darna"
+            className="h-10 w-auto sm:h-12"
+          />
         </a>
 
         <ul className="hidden items-center gap-7 lg:flex">
