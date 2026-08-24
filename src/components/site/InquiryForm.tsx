@@ -90,7 +90,15 @@ export function InquiryForm() {
   const [transports, setTransports] = useState<string[]>([]);
   const [wantsStay, setWantsStay] = useState<"No" | "Yes">("No");
   const [stayType, setStayType] = useState<string>("");
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  type FieldErrors = Partial<{
+    city: string;
+    people: string;
+    arrival: string;
+    departure: string;
+    email: string;
+    whatsapp: string;
+  }>;
+  const [errors, setErrors] = useState<FieldErrors>({});
   const [sent, setSent] = useState(false);
 
   const toggle = (list: string[], set: (v: string[]) => void, value: string) =>
@@ -106,7 +114,7 @@ export function InquiryForm() {
         const key = String(issue.path[0]);
         if (!next[key]) next[key] = issue.message;
       }
-      setErrors(next);
+      setErrors(next as FieldErrors);
       return;
     }
     setErrors({});
