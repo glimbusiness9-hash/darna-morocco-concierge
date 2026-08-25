@@ -29,10 +29,10 @@ export function FinalCta() {
             Accommodation. Activities. Transportation. Local help.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button asChild variant="whatsapp" size="xl">
+            <Button asChild variant="hero" size="xl">
               <a href="#services">Explore our services</a>
             </Button>
-            <Button asChild variant="onmedia" size="xl">
+            <Button asChild variant="whatsapp" size="xl">
               <a href={waLink(MESSAGES.general)} target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon className="h-5 w-5" />
                 WhatsApp darna
