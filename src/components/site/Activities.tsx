@@ -12,7 +12,7 @@ const ACTIVITIES = [
     title: "Scuba Diving",
     location: "Mdiq & Belyounech, Tetouan region",
     text: "Scuba diving with certified instructors along Morocco's northern coast.",
-    img: coast,
+    img: scubaDivingAsset.url,
   },
   {
     title: "Boat Trip",
