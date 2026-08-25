@@ -17,19 +17,19 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         /* darna variants */
-        hero: "bg-deep text-deep-foreground tracking-[0.14em] uppercase text-xs shadow-soft hover:bg-primary",
+        hero: "bg-primary text-primary-foreground tracking-[0.14em] uppercase text-xs shadow-soft hover:brightness-90",
         onmedia:
-          "border border-onmedia/60 bg-onmedia/10 text-onmedia backdrop-blur-sm tracking-[0.14em] uppercase text-xs hover:bg-onmedia hover:text-deep",
+          "border border-onmedia/60 bg-onmedia/10 text-onmedia backdrop-blur-sm tracking-[0.14em] uppercase text-xs hover:bg-onmedia hover:text-primary",
         whatsapp:
-          "bg-terracotta text-terracotta-foreground tracking-[0.14em] uppercase text-xs shadow-soft hover:brightness-110",
+          "bg-whatsapp text-whatsapp-foreground tracking-[0.14em] uppercase text-xs shadow-soft hover:brightness-95 [&_svg]:text-whatsapp-foreground",
         sandline:
-          "border border-deep/25 bg-transparent text-deep tracking-[0.14em] uppercase text-xs hover:bg-deep hover:text-deep-foreground",
+          "border border-primary/40 bg-transparent text-primary tracking-[0.14em] uppercase text-xs hover:bg-primary hover:text-primary-foreground",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        xl: "h-13 rounded-sm px-9",
+        default: "h-9 rounded-full px-4 py-2",
+        sm: "h-8 rounded-full px-3 text-xs",
+        lg: "h-10 rounded-full px-8",
+        xl: "h-13 rounded-full px-9",
         icon: "h-9 w-9",
       },
     },
