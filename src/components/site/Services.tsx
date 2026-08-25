@@ -117,7 +117,7 @@ export function Services() {
                     ))}
                   </ul>
                 )}
-                <Button asChild variant="whatsapp" size="xl" className="mt-8">
+                <Button asChild variant="sandline" size="xl" className="mt-8">
                   <a href={waLink(c.message)} target="_blank" rel="noopener noreferrer">
                     <WhatsAppIcon />
                     {c.cta}
