@@ -5,13 +5,14 @@ import coast from "@/assets/coast.jpg";
 import mountains from "@/assets/mountains.jpg";
 import riad from "@/assets/riad-interior.jpg";
 import chefchaouen from "@/assets/chefchaouen-city.jpg";
+import scubaDivingAsset from "@/assets/scuba-diving.jpg.asset.json";
 
 const ACTIVITIES = [
   {
     title: "Scuba Diving",
     location: "Mdiq & Belyounech, Tetouan region",
     text: "Scuba diving with certified instructors along Morocco's northern coast.",
-    img: coast,
+    img: scubaDivingAsset.url,
   },
   {
     title: "Boat Trip",
