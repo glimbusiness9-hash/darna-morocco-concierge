@@ -27,10 +27,10 @@ export function Hero() {
           Your personal concierge for stays, activities and transportation across Northern Morocco.
         </p>
         <div className="rise mt-10 flex flex-col gap-3 sm:flex-row [animation-delay:380ms]">
-          <Button asChild variant="whatsapp" size="xl">
+          <Button asChild variant="hero" size="xl">
             <a href="#services">Explore our services</a>
           </Button>
-          <Button asChild variant="onmedia" size="xl">
+          <Button asChild variant="whatsapp" size="xl">
             <a href={waLink(MESSAGES.general)} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon className="h-5 w-5" />
               Chat with darna

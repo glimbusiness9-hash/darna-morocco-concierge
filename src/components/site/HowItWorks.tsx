@@ -23,7 +23,7 @@ export function HowItWorks() {
           {STEPS.map((s, i) => (
             <Reveal as="li" key={s.n} delay={i * 110} className="relative md:pt-10">
               <span className="absolute top-4 left-0 hidden h-px w-full bg-border md:block" />
-              <span className="relative z-10 hidden h-2.5 w-2.5 rounded-full bg-terracotta md:absolute md:top-[0.65rem] md:left-0 md:block" />
+              <span className="relative z-10 hidden h-2.5 w-2.5 rounded-full bg-primary md:absolute md:top-[0.65rem] md:left-0 md:block" />
               <div className="flex items-baseline gap-4 md:block">
                 <span className="font-display text-4xl text-sand md:text-5xl">{s.n}</span>
                 <p className="mt-0 max-w-[16rem] text-sm leading-relaxed text-deep md:mt-4">

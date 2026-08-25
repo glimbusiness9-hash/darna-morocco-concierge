@@ -73,7 +73,7 @@ export function Accommodation() {
           <Button asChild variant="hero" size="xl" className="mt-8">
             <a href="#inquiry">Tell us what you're looking for</a>
           </Button>
-          <Button asChild variant="sandline" size="xl" className="mt-8 sm:ml-3">
+          <Button asChild variant="whatsapp" size="xl" className="mt-8 sm:ml-3">
             <a
               href={waLink(MESSAGES.accommodation())}
               target="_blank"
