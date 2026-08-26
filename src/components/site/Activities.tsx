@@ -10,6 +10,11 @@ import boatTripAsset from "@/assets/boat-trip.jpg.asset.json";
 import jetSkiAsset from "@/assets/jet-ski.jpg.asset.json";
 import surfAsset from "@/assets/surf.jpg.asset.json";
 import quadBuggyAsset from "@/assets/quad-buggy.webp.asset.json";
+import escapeRoomAsset from "@/assets/escape-room.png.asset.json";
+import padelAsset from "@/assets/padel.jpg.asset.json";
+import golfAsset from "@/assets/golf.webp.asset.json";
+import guidedTourAsset from "@/assets/guided-tour.jpg.asset.json";
+import hikingAsset from "@/assets/hiking.jpg.asset.json";
 
 const ACTIVITIES = [
   {
