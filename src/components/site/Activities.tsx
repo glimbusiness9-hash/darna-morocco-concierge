@@ -6,6 +6,7 @@ import mountains from "@/assets/mountains.jpg";
 import riad from "@/assets/riad-interior.jpg";
 import chefchaouen from "@/assets/chefchaouen-city.jpg";
 import scubaDivingAsset from "@/assets/scuba-diving.jpg.asset.json";
+import boatTripAsset from "@/assets/boat-trip.jpg.asset.json";
 
 const ACTIVITIES = [
   {
