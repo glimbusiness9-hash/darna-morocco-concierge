@@ -10,6 +10,11 @@ import boatTripAsset from "@/assets/boat-trip.jpg.asset.json";
 import jetSkiAsset from "@/assets/jet-ski.jpg.asset.json";
 import surfAsset from "@/assets/surf.jpg.asset.json";
 import quadBuggyAsset from "@/assets/quad-buggy.webp.asset.json";
+import escapeRoomAsset from "@/assets/escape-room.png.asset.json";
+import padelAsset from "@/assets/padel.jpg.asset.json";
+import golfAsset from "@/assets/golf.webp.asset.json";
+import guidedTourAsset from "@/assets/guided-tour.jpg.asset.json";
+import hikingAsset from "@/assets/hiking.jpg.asset.json";
 
 const ACTIVITIES = [
   {
@@ -52,31 +57,31 @@ const ACTIVITIES = [
     title: "Escape Room",
     location: "Tangier",
     text: "Themed escape experiences for friends, couples and groups.",
-    img: chefchaouen,
+    img: escapeRoomAsset.url,
   },
   {
     title: "Tennis & Padel",
     location: "Tangier & Tetouan",
     text: "Reserve courts at a convenient time.",
-    img: riad,
+    img: padelAsset.url,
   },
   {
     title: "Golf",
     location: "Northern Morocco",
     text: "Discover exceptional golf experiences in Northern Morocco.",
-    img: mountains,
+    img: golfAsset.url,
   },
   {
     title: "Guided Tour",
     location: "Northern Morocco",
     text: "Discover the must-see places with local guidance.",
-    img: chefchaouen,
+    img: guidedTourAsset.url,
   },
   {
     title: "Hiking",
     location: "Tangier · Tetouan · Chefchaouen · Akchour",
     text: "Explore the Rif Mountains, forests, waterfalls and natural landscapes.",
-    img: mountains,
+    img: hikingAsset.url,
   },
 ];
 
