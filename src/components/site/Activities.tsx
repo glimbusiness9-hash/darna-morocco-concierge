@@ -19,7 +19,7 @@ const ACTIVITIES = [
     title: "Boat Trip",
     location: "Marina Smir & Mdiq",
     text: "Sea trips along the northern coast of Morocco.",
-    img: coast,
+    img: boatTripAsset.url,
   },
   {
     title: "Jet Ski",
