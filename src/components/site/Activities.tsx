@@ -15,6 +15,14 @@ import padelAsset from "@/assets/padel.jpg.asset.json";
 import golfAsset from "@/assets/golf.webp.asset.json";
 import guidedTourAsset from "@/assets/guided-tour.jpg.asset.json";
 import hikingAsset from "@/assets/hiking.jpg.asset.json";
+import horsebackAsset from "@/assets/horseback.jpg.asset.json";
+import ziplineAsset from "@/assets/zipline.jpg.asset.json";
+import treeTopAsset from "@/assets/tree-top.jpg.asset.json";
+import freeFallAsset from "@/assets/free-fall.jpg.asset.json";
+import paintballAsset from "@/assets/paintball.jpg.asset.json";
+import swimmingPoolAsset from "@/assets/swimming-pool.jpg.asset.json";
+import educationalFarmAsset from "@/assets/educational-farm.jpg.asset.json";
+import kidsClubAsset from "@/assets/kids-club.jpg.asset.json";
 
 const ACTIVITIES = [
   {
