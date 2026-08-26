@@ -57,31 +57,31 @@ const ACTIVITIES = [
     title: "Escape Room",
     location: "Tangier",
     text: "Themed escape experiences for friends, couples and groups.",
-    img: chefchaouen,
+    img: escapeRoomAsset.url,
   },
   {
     title: "Tennis & Padel",
     location: "Tangier & Tetouan",
     text: "Reserve courts at a convenient time.",
-    img: riad,
+    img: padelAsset.url,
   },
   {
     title: "Golf",
     location: "Northern Morocco",
     text: "Discover exceptional golf experiences in Northern Morocco.",
-    img: mountains,
+    img: golfAsset.url,
   },
   {
     title: "Guided Tour",
     location: "Northern Morocco",
     text: "Discover the must-see places with local guidance.",
-    img: chefchaouen,
+    img: guidedTourAsset.url,
   },
   {
     title: "Hiking",
     location: "Tangier · Tetouan · Chefchaouen · Akchour",
     text: "Explore the Rif Mountains, forests, waterfalls and natural landscapes.",
-    img: mountains,
+    img: hikingAsset.url,
   },
 ];
 
