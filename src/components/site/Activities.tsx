@@ -7,6 +7,9 @@ import riad from "@/assets/riad-interior.jpg";
 import chefchaouen from "@/assets/chefchaouen-city.jpg";
 import scubaDivingAsset from "@/assets/scuba-diving.jpg.asset.json";
 import boatTripAsset from "@/assets/boat-trip.jpg.asset.json";
+import jetSkiAsset from "@/assets/jet-ski.jpg.asset.json";
+import surfAsset from "@/assets/surf.jpg.asset.json";
+import quadBuggyAsset from "@/assets/quad-buggy.webp.asset.json";
 
 const ACTIVITIES = [
   {
@@ -25,19 +28,19 @@ const ACTIVITIES = [
     title: "Jet Ski",
     location: "Tetouan Region",
     text: "Explore the Mediterranean around Cabo Negro and the northern coast.",
-    img: coast,
+    img: jetSkiAsset.url,
   },
   {
     title: "Surf",
     location: "Tangier",
     text: "Guided surfing sessions for different levels.",
-    img: coast,
+    img: surfAsset.url,
   },
   {
     title: "Quad & Buggy",
     location: "Tangier · Tetouan · Chefchaouen · Akchour",
     text: "Off-road adventures through mountains, forests and natural landscapes.",
-    img: mountains,
+    img: quadBuggyAsset.url,
   },
   {
     title: "Home Massage",
