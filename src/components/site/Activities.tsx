@@ -43,9 +43,9 @@ const ACTIVITIES = [
     img: quadBuggyAsset.url,
   },
   {
-    title: "Home Massage",
+    title: "Moroccan Hammam & Spa , Professional Massage ",
     location: "Tangier & Tetouan",
-    text: "Professional massage delivered directly to your accommodation.",
+    text: "Professional massage , Moroccan Hammam & Spa",
     img: riad,
   },
   {
