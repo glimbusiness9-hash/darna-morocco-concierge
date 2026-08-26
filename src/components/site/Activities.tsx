@@ -1,10 +1,7 @@
 import { MapPin } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { waLink, MESSAGES } from "@/lib/darna";
-import coast from "@/assets/coast.jpg";
-import mountains from "@/assets/mountains.jpg";
 import riad from "@/assets/riad-interior.jpg";
-import chefchaouen from "@/assets/chefchaouen-city.jpg";
 import scubaDivingAsset from "@/assets/scuba-diving.jpg.asset.json";
 import boatTripAsset from "@/assets/boat-trip.jpg.asset.json";
 import jetSkiAsset from "@/assets/jet-ski.jpg.asset.json";
@@ -15,6 +12,14 @@ import padelAsset from "@/assets/padel.jpg.asset.json";
 import golfAsset from "@/assets/golf.webp.asset.json";
 import guidedTourAsset from "@/assets/guided-tour.jpg.asset.json";
 import hikingAsset from "@/assets/hiking.jpg.asset.json";
+import horsebackAsset from "@/assets/horseback.jpg.asset.json";
+import ziplineAsset from "@/assets/zipline.jpg.asset.json";
+import treeTopAsset from "@/assets/tree-top.jpg.asset.json";
+import freeFallAsset from "@/assets/free-fall.jpg.asset.json";
+import paintballAsset from "@/assets/paintball.jpg.asset.json";
+import swimmingPoolAsset from "@/assets/swimming-pool.jpg.asset.json";
+import educationalFarmAsset from "@/assets/educational-farm.jpg.asset.json";
+import kidsClubAsset from "@/assets/kids-club.jpg.asset.json";
 
 const ACTIVITIES = [
   {
@@ -87,49 +92,49 @@ const ACTIVITIES = [
     title: "Horseback Riding",
     location: "Tetouan & Tangier",
     text: "Ride through scenic coastal trails and countryside with guided horseback excursions.",
-    img: coast,
+    img: horsebackAsset.url,
   },
   {
     title: "Ziplines",
     location: "Chefchaouen & Tangier",
     text: "Fly through the air, including the Spider-Man Zipline and the obstacle-based Ligne de Lerne.",
-    img: mountains,
+    img: ziplineAsset.url,
   },
   {
     title: "Tree-Top Course",
     location: "Tangier & Chefchaouen",
     text: "Navigate ropes, suspended bridges, and climbing challenges among the trees.",
-    img: mountains,
+    img: treeTopAsset.url,
   },
   {
     title: "Free Fall & Climbing",
     location: "Tangier & Tetouan",
     text: "Experience a rush of adrenaline with free-fall setups and rock-climbing walls.",
-    img: chefchaouen,
+    img: freeFallAsset.url,
   },
   {
     title: "Paintball",
     location: "Tangier & Tetouan",
     text: "Engage in strategic team-building paintball matches in dedicated outdoor arenas.",
-    img: mountains,
+    img: paintballAsset.url,
   },
   {
     title: "Family Swimming Pool",
     location: "Tangier & Tetouan",
     text: "Unwind and swim in a scenic outdoor pool area after your activities.",
-    img: coast,
+    img: swimmingPoolAsset.url,
   },
   {
     title: "Educational Farm",
     location: "Tetouan region",
     text: "Visit friendly farm animals to learn more about local rural life, great for children.",
-    img: mountains,
+    img: educationalFarmAsset.url,
   },
   {
     title: "Kids Club",
     location: "Tangier & Tetouan",
     text: "Supervised artistic workshops, games, and nature education for young children.",
-    img: coast,
+    img: kidsClubAsset.url,
   },
 ];
 
