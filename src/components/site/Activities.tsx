@@ -28,19 +28,19 @@ const ACTIVITIES = [
     title: "Jet Ski",
     location: "Tetouan Region",
     text: "Explore the Mediterranean around Cabo Negro and the northern coast.",
-    img: coast,
+    img: jetSkiAsset.url,
   },
   {
     title: "Surf",
     location: "Tangier",
     text: "Guided surfing sessions for different levels.",
-    img: coast,
+    img: surfAsset.url,
   },
   {
     title: "Quad & Buggy",
     location: "Tangier · Tetouan · Chefchaouen · Akchour",
     text: "Off-road adventures through mountains, forests and natural landscapes.",
-    img: mountains,
+    img: quadBuggyAsset.url,
   },
   {
     title: "Home Massage",
