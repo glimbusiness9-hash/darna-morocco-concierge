@@ -2,14 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
-import riad from "@/assets/riad-interior.jpg";
+import riadAsset from "@/assets/riad-real.webp.asset.json";
 import coast from "@/assets/coast.jpg";
-import transport from "@/assets/transport.jpg";
+import transportAsset from "@/assets/transport-real.jpg.asset.json";
 import mountains from "@/assets/mountains.jpg";
 
 const CARDS = [
   {
-    img: riad,
+    img: riadAsset.url,
     alt: "Moroccan riad courtyard with carved arches and a tiled fountain",
     title: "Find your stay",
     kicker: "Accommodation",
