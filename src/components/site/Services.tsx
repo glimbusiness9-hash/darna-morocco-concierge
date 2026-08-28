@@ -48,8 +48,8 @@ const CARDS = [
     message: MESSAGES.transport("un transport au Maroc"),
   },
   {
-    img: mountains,
-    alt: "Akchour waterfalls in the Rif Mountains",
+    img: tetouanCityAsset.url,
+    alt: "Panoramic view of Tetouan city with the Rif Mountains behind",
     title: "Custom Made",
     kicker: "Custom Made",
     text: "Have something specific in mind? Tell us what you want and we'll help build it around your trip.",
