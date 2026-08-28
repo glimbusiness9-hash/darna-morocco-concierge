@@ -8,6 +8,7 @@ import { Transportation } from "@/components/site/Transportation";
 import { Accommodation } from "@/components/site/Accommodation";
 import { CustomMade } from "@/components/site/CustomMade";
 import { HowItWorks } from "@/components/site/HowItWorks";
+import { Trust } from "@/components/site/Trust";
 import { InquiryForm } from "@/components/site/InquiryForm";
 import { FinalCta } from "@/components/site/FinalCta";
 import { Footer } from "@/components/site/Footer";
