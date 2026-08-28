@@ -3,7 +3,7 @@
  * Replace with the real number in international format, digits only (e.g. "212600000000").
  * Leaving it empty keeps buttons pointing at wa.me without a number.
  */
-export const WHATSAPP_NUMBER = "";
+export const WHATSAPP_NUMBER = "212676777399";
 
 export const MESSAGES = {
   general: "Bonjour darna, je souhaite planifier mon séjour au Maroc.",
