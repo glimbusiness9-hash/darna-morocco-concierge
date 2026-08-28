@@ -2,14 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
-import riad from "@/assets/riad-interior.jpg";
+import riadAsset from "@/assets/riad-real.webp.asset.json";
 import coast from "@/assets/coast.jpg";
-import transport from "@/assets/transport.jpg";
-import mountains from "@/assets/mountains.jpg";
+import transportAsset from "@/assets/transport-real.jpg.asset.json";
+import tetouanCityAsset from "@/assets/tetouan-city.png.asset.json";
 
 const CARDS = [
   {
-    img: riad,
+    img: riadAsset.url,
     alt: "Moroccan riad courtyard with carved arches and a tiled fountain",
     title: "Find your stay",
     kicker: "Accommodation",
@@ -38,7 +38,7 @@ const CARDS = [
     message: MESSAGES.activity("Activités & Expériences"),
   },
   {
-    img: transport,
+    img: transportAsset.url,
     alt: "Private transfer car on a coastal road in northern Morocco at dusk",
     title: "Transportation",
     kicker: "Transportation",
@@ -48,8 +48,8 @@ const CARDS = [
     message: MESSAGES.transport("un transport au Maroc"),
   },
   {
-    img: mountains,
-    alt: "Akchour waterfalls in the Rif Mountains",
+    img: tetouanCityAsset.url,
+    alt: "Panoramic view of Tetouan city with the Rif Mountains behind",
     title: "Custom Made",
     kicker: "Custom Made",
     text: "Have something specific in mind? Tell us what you want and we'll help build it around your trip.",
