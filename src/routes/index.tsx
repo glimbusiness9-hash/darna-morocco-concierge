@@ -45,6 +45,7 @@ function Index() {
         <Accommodation />
         <CustomMade />
         <HowItWorks />
+        <Trust />
         <InquiryForm />
         <FinalCta />
       </main>
