@@ -38,7 +38,7 @@ const CARDS = [
     message: MESSAGES.activity("Activités & Expériences"),
   },
   {
-    img: transport,
+    img: transportAsset.url,
     alt: "Private transfer car on a coastal road in northern Morocco at dusk",
     title: "Transportation",
     kicker: "Transportation",
