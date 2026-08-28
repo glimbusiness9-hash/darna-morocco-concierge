@@ -5,7 +5,7 @@ import { waLink, MESSAGES } from "@/lib/darna";
 import riadAsset from "@/assets/riad-real.webp.asset.json";
 import coast from "@/assets/coast.jpg";
 import transportAsset from "@/assets/transport-real.jpg.asset.json";
-import mountains from "@/assets/mountains.jpg";
+import tetouanCityAsset from "@/assets/tetouan-city.png.asset.json";
 
 const CARDS = [
   {
