@@ -2,14 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
-import tangier from "@/assets/tangier.jpg";
-import tetouan from "@/assets/tetouan.jpg";
-import chefchaouen from "@/assets/chefchaouen-city.jpg";
+import tangierAsset from "@/assets/tangier-real.jpg.asset.json";
+import tetouanAsset from "@/assets/tetouan-real.webp.asset.json";
+import chefchaouenAsset from "@/assets/chefchaouen-real.jpg.asset.json";
 
 const DESTINATIONS = [
-  { name: "Tangier", line: "Stay by the Mediterranean.", img: tangier },
-  { name: "Tetouan", line: "Discover the White Dove.", img: tetouan },
-  { name: "Chefchaouen", line: "Stay in the Blue City.", img: chefchaouen },
+  { name: "Tangier", line: "Stay by the Mediterranean.", img: tangierAsset.url },
+  { name: "Tetouan", line: "Discover the White Dove.", img: tetouanAsset.url },
+  { name: "Chefchaouen", line: "Stay in the Blue City.", img: chefchaouenAsset.url },
 ];
 
 const MORE = ["Martil", "Mdiq", "Cabo Negro", "Marina Smir"];
