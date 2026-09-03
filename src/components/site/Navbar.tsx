@@ -48,8 +48,8 @@ export function Navbar() {
         aria-label="Main"
         className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8"
       >
-        <a
-          href="#home"
+        <Link
+          to="/"
           className={cn(
             "flex items-center transition-opacity",
             solid ? "opacity-100" : "opacity-100",
@@ -60,7 +60,7 @@ export function Navbar() {
             alt="darna"
             className="h-10 w-auto sm:h-12"
           />
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">
           {LINKS.map((l) => (
