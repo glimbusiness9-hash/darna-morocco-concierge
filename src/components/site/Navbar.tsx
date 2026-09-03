@@ -92,7 +92,7 @@ export function Navbar() {
             asChild
             size="lg"
             variant={solid ? "whatsapp" : "onmedia"}
-            className="hidden sm:inline-flex"
+            className="hidden shrink-0 whitespace-nowrap sm:inline-flex"
           >
             <a href={waLink(MESSAGES.general)} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon />
