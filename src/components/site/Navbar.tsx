@@ -81,6 +81,15 @@ export function Navbar() {
           <Button
             asChild
             size="lg"
+            variant={solid ? "sandline" : "onmedia"}
+            className="hidden sm:inline-flex"
+          >
+            <Link to="/become-a-host">Become a Host</Link>
+          </Button>
+
+          <Button
+            asChild
+            size="lg"
             variant={solid ? "whatsapp" : "onmedia"}
             className="hidden sm:inline-flex"
           >
