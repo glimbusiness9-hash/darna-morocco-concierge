@@ -62,7 +62,7 @@ export function Navbar() {
           />
         </Link>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden min-w-0 items-center gap-4 text-[0.6rem] uppercase tracking-[0.12em] xl:flex xl:gap-5 xl:text-[0.65rem] xl:tracking-[0.14em] min-[1440px]:gap-7 min-[1440px]:text-[0.72rem] min-[1440px]:tracking-[0.18em]">
           {LINKS.map((l) => (
             <li key={l.href}>
               <a
