@@ -51,7 +51,7 @@ export function Navbar() {
         <Link
           to="/"
           className={cn(
-            "flex items-center transition-opacity",
+            "flex shrink-0 items-center transition-opacity",
             solid ? "opacity-100" : "opacity-100",
           )}
         >
