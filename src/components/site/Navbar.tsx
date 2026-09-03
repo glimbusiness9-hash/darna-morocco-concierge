@@ -118,7 +118,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-border bg-cream transition-[max-height] duration-500 lg:hidden",
+          "overflow-hidden border-t border-border bg-cream transition-[max-height] duration-500 xl:hidden",
           open ? "max-h-[32rem]" : "max-h-0 border-t-0",
         )}
       >
