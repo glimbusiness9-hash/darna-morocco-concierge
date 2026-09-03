@@ -58,7 +58,7 @@ export function Navbar() {
           <img
             src={logoAsset.url}
             alt="darna"
-            className="h-10 w-auto sm:h-12"
+            className="h-10 w-auto shrink-0 sm:h-12"
           />
         </Link>
 
