@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "./WhatsAppIcon";
@@ -81,6 +82,15 @@ export function Navbar() {
           <Button
             asChild
             size="lg"
+            variant={solid ? "sandline" : "onmedia"}
+            className="hidden sm:inline-flex"
+          >
+            <Link to="/become-a-host">Become a Host</Link>
+          </Button>
+
+          <Button
+            asChild
+            size="lg"
             variant={solid ? "whatsapp" : "onmedia"}
             className="hidden sm:inline-flex"
           >
@@ -124,6 +134,15 @@ export function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              to="/become-a-host"
+              onClick={() => setOpen(false)}
+              className="block border-b border-border/60 py-4 font-display text-2xl text-deep"
+            >
+              Become a Host
+            </Link>
+          </li>
           <li className="pt-6 pb-2">
             <Button asChild variant="whatsapp" size="xl" className="w-full">
               <a href={waLink(MESSAGES.general)} target="_blank" rel="noopener noreferrer">
