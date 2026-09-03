@@ -106,7 +106,7 @@ export function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             className={cn(
-              "inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors lg:hidden",
+              "inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors xl:hidden",
               solid ? "text-deep" : "text-onmedia",
             )}
           >
