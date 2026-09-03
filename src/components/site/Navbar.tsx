@@ -83,7 +83,7 @@ export function Navbar() {
             asChild
             size="lg"
             variant={solid ? "sandline" : "onmedia"}
-            className="hidden sm:inline-flex"
+            className="hidden shrink-0 whitespace-nowrap sm:inline-flex"
           >
             <Link to="/become-a-host">Become a Host</Link>
           </Button>
