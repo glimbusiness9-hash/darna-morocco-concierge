@@ -134,6 +134,15 @@ export function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              to="/become-a-host"
+              onClick={() => setOpen(false)}
+              className="block border-b border-border/60 py-4 font-display text-2xl text-deep"
+            >
+              Become a Host
+            </Link>
+          </li>
           <li className="pt-6 pb-2">
             <Button asChild variant="whatsapp" size="xl" className="w-full">
               <a href={waLink(MESSAGES.general)} target="_blank" rel="noopener noreferrer">
