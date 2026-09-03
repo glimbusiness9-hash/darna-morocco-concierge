@@ -51,24 +51,24 @@ export function Navbar() {
         <Link
           to="/"
           className={cn(
-            "flex items-center transition-opacity",
+            "flex shrink-0 items-center transition-opacity",
             solid ? "opacity-100" : "opacity-100",
           )}
         >
           <img
             src={logoAsset.url}
             alt="darna"
-            className="h-10 w-auto sm:h-12"
+            className="h-10 w-auto shrink-0 sm:h-12"
           />
         </Link>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden min-w-0 items-center gap-4 text-[0.6rem] uppercase tracking-[0.12em] xl:flex xl:gap-5 xl:text-[0.65rem] xl:tracking-[0.14em] min-[1440px]:gap-7 min-[1440px]:text-[0.72rem] min-[1440px]:tracking-[0.18em]">
           {LINKS.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 className={cn(
-                  "text-[0.72rem] uppercase tracking-[0.18em] transition-colors",
+                  "whitespace-nowrap uppercase transition-colors",
                   solid ? "text-deep/75 hover:text-primary" : "text-onmedia/85 hover:text-onmedia",
                 )}
               >
@@ -78,12 +78,12 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <Button
             asChild
             size="lg"
             variant={solid ? "sandline" : "onmedia"}
-            className="hidden sm:inline-flex"
+            className="hidden shrink-0 whitespace-nowrap sm:inline-flex"
           >
             <Link to="/become-a-host">Become a Host</Link>
           </Button>
@@ -92,7 +92,7 @@ export function Navbar() {
             asChild
             size="lg"
             variant={solid ? "whatsapp" : "onmedia"}
-            className="hidden sm:inline-flex"
+            className="hidden shrink-0 whitespace-nowrap sm:inline-flex"
           >
             <a href={waLink(MESSAGES.general)} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon />
@@ -106,7 +106,7 @@ export function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             className={cn(
-              "inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors lg:hidden",
+              "inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors xl:hidden",
               solid ? "text-deep" : "text-onmedia",
             )}
           >
@@ -118,7 +118,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-border bg-cream transition-[max-height] duration-500 lg:hidden",
+          "overflow-hidden border-t border-border bg-cream transition-[max-height] duration-500 xl:hidden",
           open ? "max-h-[32rem]" : "max-h-0 border-t-0",
         )}
       >
