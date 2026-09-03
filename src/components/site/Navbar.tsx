@@ -68,7 +68,7 @@ export function Navbar() {
               <a
                 href={l.href}
                 className={cn(
-                  "text-[0.72rem] uppercase tracking-[0.18em] transition-colors",
+                  "whitespace-nowrap uppercase transition-colors",
                   solid ? "text-deep/75 hover:text-primary" : "text-onmedia/85 hover:text-onmedia",
                 )}
               >
