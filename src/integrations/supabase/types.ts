@@ -14,7 +14,132 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      host_submissions: {
+        Row: {
+          address: string
+          amenities: string[]
+          bathrooms: number
+          bedrooms: number
+          beds: number
+          city: string
+          contact_name: string | null
+          created_at: string
+          description: string
+          email: string | null
+          guests: number
+          id: string
+          name: string
+          nearby: string | null
+          phone: string | null
+          photos: string[]
+          price_per_night: number
+          property_type: string
+          status: Database["public"]["Enums"]["host_submission_status"]
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          amenities?: string[]
+          bathrooms: number
+          bedrooms: number
+          beds: number
+          city: string
+          contact_name?: string | null
+          created_at?: string
+          description: string
+          email?: string | null
+          guests: number
+          id?: string
+          name: string
+          nearby?: string | null
+          phone?: string | null
+          photos?: string[]
+          price_per_night: number
+          property_type: string
+          status?: Database["public"]["Enums"]["host_submission_status"]
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          amenities?: string[]
+          bathrooms?: number
+          bedrooms?: number
+          beds?: number
+          city?: string
+          contact_name?: string | null
+          created_at?: string
+          description?: string
+          email?: string | null
+          guests?: number
+          id?: string
+          name?: string
+          nearby?: string | null
+          phone?: string | null
+          photos?: string[]
+          price_per_night?: number
+          property_type?: string
+          status?: Database["public"]["Enums"]["host_submission_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      inquiries: {
+        Row: {
+          activities: string[]
+          budget: string | null
+          check_in: string | null
+          check_out: string | null
+          city: string
+          created_at: string
+          email: string
+          guests: number
+          id: string
+          message: string | null
+          name: string | null
+          status: Database["public"]["Enums"]["inquiry_status"]
+          stay: string | null
+          transport: string[]
+          updated_at: string
+          whatsapp: string
+        }
+        Insert: {
+          activities?: string[]
+          budget?: string | null
+          check_in?: string | null
+          check_out?: string | null
+          city: string
+          created_at?: string
+          email: string
+          guests: number
+          id?: string
+          message?: string | null
+          name?: string | null
+          status?: Database["public"]["Enums"]["inquiry_status"]
+          stay?: string | null
+          transport?: string[]
+          updated_at?: string
+          whatsapp: string
+        }
+        Update: {
+          activities?: string[]
+          budget?: string | null
+          check_in?: string | null
+          check_out?: string | null
+          city?: string
+          created_at?: string
+          email?: string
+          guests?: number
+          id?: string
+          message?: string | null
+          name?: string | null
+          status?: Database["public"]["Enums"]["inquiry_status"]
+          stay?: string | null
+          transport?: string[]
+          updated_at?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +148,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      host_submission_status: "pending" | "approved" | "rejected"
+      inquiry_status: "new" | "contacted" | "completed" | "cancelled"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +276,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      host_submission_status: ["pending", "approved", "rejected"],
+      inquiry_status: ["new", "contacted", "completed", "cancelled"],
+    },
   },
 } as const
