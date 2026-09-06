@@ -72,9 +72,11 @@ function Chip({
 export function HostForm() {
   const [type, setType] = useState<string>(PROPERTY_TYPES[0]);
   const [amenities, setAmenities] = useState<string[]>([]);
-  const [photos, setPhotos] = useState<{ url: string; name: string }[]>([]);
+  const [photos, setPhotos] = useState<{ url: string; name: string; file: File }[]>([]);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   useEffect(() => {
     return () => photos.forEach((p) => URL.revokeObjectURL(p.url));
@@ -85,7 +87,7 @@ export function HostForm() {
     if (!files) return;
     const next = Array.from(files)
       .filter((f) => f.type.startsWith("image/"))
-      .map((f) => ({ url: URL.createObjectURL(f), name: f.name }));
+      .map((f) => ({ url: URL.createObjectURL(f), name: f.name, file: f }));
     setPhotos((prev) => [...prev, ...next]);
   }
 
@@ -97,9 +99,10 @@ export function HostForm() {
     });
   }
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
       const next: Record<string, string> = {};
@@ -111,7 +114,50 @@ export function HostForm() {
       return;
     }
     setErrors({});
-    setSent(true);
+    setFormError(null);
+    setSubmitting(true);
+
+    try {
+      const uploaded: string[] = [];
+      for (const p of photos.slice(0, 20)) {
+        const ext = p.file.name.split(".").pop()?.toLowerCase() ?? "jpg";
+        const path = `${crypto.randomUUID()}.${ext}`;
+        const { error } = await supabase.storage
+          .from("property-photos")
+          .upload(path, p.file, { contentType: p.file.type, upsert: false });
+        if (error) throw new Error("We couldn't upload your photos. Please try again.");
+        uploaded.push(path);
+      }
+
+      const v = parsed.data;
+      await submitHostApplication({
+        data: {
+          name: v.name,
+          contact_name: v.contact_name ?? "",
+          phone: v.phone ?? "",
+          email: v.email ?? "",
+          city: v.city,
+          property_type: type as "Apartment" | "Villa" | "House" | "Riad",
+          description: v.description,
+          guests: v.guests,
+          bedrooms: v.bedrooms,
+          beds: v.beds,
+          bathrooms: v.bathrooms,
+          price_per_night: v.price,
+          amenities,
+          address: v.address,
+          nearby: v.nearby ?? "",
+          photos: uploaded,
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      setFormError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (sent) {
