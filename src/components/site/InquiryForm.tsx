@@ -104,7 +104,7 @@ export function InquiryForm() {
   const toggle = (list: string[], set: (v: string[]) => void, value: string) =>
     set(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
     const parsed = schema.safeParse(data);
@@ -118,7 +118,34 @@ export function InquiryForm() {
       return;
     }
     setErrors({});
-    setSent(true);
+    setFormError(null);
+    setSubmitting(true);
+    const v = parsed.data;
+    try {
+      await submitInquiry({
+        data: {
+          name: "",
+          city: v.city,
+          check_in: v.arrival,
+          check_out: v.departure,
+          guests: v.people,
+          activities,
+          stay: wantsStay === "Yes" ? stayType : "",
+          transport: transports,
+          budget: v.budget ?? "",
+          email: v.email,
+          whatsapp: v.whatsapp,
+          message: v.message ?? "",
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      setFormError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
