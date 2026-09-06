@@ -7,6 +7,9 @@ import { Label } from "@/components/ui/label";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { submitHostApplication } from "@/lib/darna.functions";
+
 
 const PROPERTY_TYPES = ["Apartment", "Villa", "House", "Riad"] as const;
 
@@ -22,6 +25,11 @@ const AMENITIES = [
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please add the property name.").max(120),
+  contact_name: z.string().trim().max(120).optional(),
+  phone: z.string().trim().max(32).optional(),
+  email: z
+    .union([z.literal(""), z.string().trim().email("Please enter a valid email.").max(255)])
+    .optional(),
   city: z.string().trim().min(2, "Please add the city.").max(80),
   description: z.string().trim().min(20, "Please add at least 20 characters.").max(2000),
   guests: z.coerce.number().int().min(1, "At least 1 guest.").max(50),
@@ -64,9 +72,11 @@ function Chip({
 export function HostForm() {
   const [type, setType] = useState<string>(PROPERTY_TYPES[0]);
   const [amenities, setAmenities] = useState<string[]>([]);
-  const [photos, setPhotos] = useState<{ url: string; name: string }[]>([]);
+  const [photos, setPhotos] = useState<{ url: string; name: string; file: File }[]>([]);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   useEffect(() => {
     return () => photos.forEach((p) => URL.revokeObjectURL(p.url));
@@ -77,7 +87,7 @@ export function HostForm() {
     if (!files) return;
     const next = Array.from(files)
       .filter((f) => f.type.startsWith("image/"))
-      .map((f) => ({ url: URL.createObjectURL(f), name: f.name }));
+      .map((f) => ({ url: URL.createObjectURL(f), name: f.name, file: f }));
     setPhotos((prev) => [...prev, ...next]);
   }
 
@@ -89,9 +99,10 @@ export function HostForm() {
     });
   }
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
       const next: Record<string, string> = {};
@@ -103,7 +114,50 @@ export function HostForm() {
       return;
     }
     setErrors({});
-    setSent(true);
+    setFormError(null);
+    setSubmitting(true);
+
+    try {
+      const uploaded: string[] = [];
+      for (const p of photos.slice(0, 20)) {
+        const ext = p.file.name.split(".").pop()?.toLowerCase() ?? "jpg";
+        const path = `${crypto.randomUUID()}.${ext}`;
+        const { error } = await supabase.storage
+          .from("property-photos")
+          .upload(path, p.file, { contentType: p.file.type, upsert: false });
+        if (error) throw new Error("We couldn't upload your photos. Please try again.");
+        uploaded.push(path);
+      }
+
+      const v = parsed.data;
+      await submitHostApplication({
+        data: {
+          name: v.name,
+          contact_name: v.contact_name ?? "",
+          phone: v.phone ?? "",
+          email: v.email ?? "",
+          city: v.city,
+          property_type: type as "Apartment" | "Villa" | "House" | "Riad",
+          description: v.description,
+          guests: v.guests,
+          bedrooms: v.bedrooms,
+          beds: v.beds,
+          bathrooms: v.bathrooms,
+          price_per_night: v.price,
+          amenities,
+          address: v.address,
+          nearby: v.nearby ?? "",
+          photos: uploaded,
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      setFormError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (sent) {
@@ -142,6 +196,22 @@ export function HostForm() {
           <Label htmlFor="city">City *</Label>
           <Input id="city" name="city" maxLength={80} className="mt-2 h-11" />
           {errors.city && <p className="mt-2 text-xs text-destructive">{errors.city}</p>}
+        </div>
+      </div>
+
+      <div className="grid gap-6 sm:grid-cols-3">
+        <div>
+          <Label htmlFor="contact_name">Your name</Label>
+          <Input id="contact_name" name="contact_name" maxLength={120} className="mt-2 h-11" />
+        </div>
+        <div>
+          <Label htmlFor="phone">Phone / WhatsApp</Label>
+          <Input id="phone" name="phone" type="tel" maxLength={32} className="mt-2 h-11" />
+        </div>
+        <div>
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" name="email" type="email" maxLength={255} className="mt-2 h-11" />
+          {errors.email && <p className="mt-2 text-xs text-destructive">{errors.email}</p>}
         </div>
       </div>
 
@@ -269,8 +339,16 @@ export function HostForm() {
         )}
       </div>
 
-      <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto">
-        Submit Property
+      {formError && <p className="text-xs text-destructive">{formError}</p>}
+
+      <Button
+        type="submit"
+        variant="hero"
+        size="xl"
+        disabled={submitting}
+        className="w-full sm:w-auto"
+      >
+        {submitting ? "Sending…" : "Submit Property"}
       </Button>
     </form>
   );
