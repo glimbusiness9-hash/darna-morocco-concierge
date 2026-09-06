@@ -333,8 +333,16 @@ export function InquiryForm() {
               />
             </div>
 
-            <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto">
-              Send my request
+            {formError && <p className="text-xs text-destructive">{formError}</p>}
+
+            <Button
+              type="submit"
+              variant="hero"
+              size="xl"
+              disabled={submitting}
+              className="w-full sm:w-auto"
+            >
+              {submitting ? "Sending…" : "Send my request"}
             </Button>
           </form>
         )}
