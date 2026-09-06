@@ -8,6 +8,7 @@ import { Reveal } from "./Reveal";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
 import { cn } from "@/lib/utils";
+import { submitInquiry } from "@/lib/darna.functions";
 
 const CITY_OPTIONS = [
   "Tangier",
@@ -100,6 +101,8 @@ export function InquiryForm() {
   }>;
   const [errors, setErrors] = useState<FieldErrors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const toggle = (list: string[], set: (v: string[]) => void, value: string) =>
     set(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
