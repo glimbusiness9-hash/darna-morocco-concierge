@@ -199,6 +199,22 @@ export function HostForm() {
         </div>
       </div>
 
+      <div className="grid gap-6 sm:grid-cols-3">
+        <div>
+          <Label htmlFor="contact_name">Your name</Label>
+          <Input id="contact_name" name="contact_name" maxLength={120} className="mt-2 h-11" />
+        </div>
+        <div>
+          <Label htmlFor="phone">Phone / WhatsApp</Label>
+          <Input id="phone" name="phone" type="tel" maxLength={32} className="mt-2 h-11" />
+        </div>
+        <div>
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" name="email" type="email" maxLength={255} className="mt-2 h-11" />
+          {errors.email && <p className="mt-2 text-xs text-destructive">{errors.email}</p>}
+        </div>
+      </div>
+
       <fieldset>
         <legend className="text-sm text-deep">Property type *</legend>
         <input type="hidden" name="type" value={type} />
