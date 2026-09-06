@@ -339,8 +339,16 @@ export function HostForm() {
         )}
       </div>
 
-      <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto">
-        Submit Property
+      {formError && <p className="text-xs text-destructive">{formError}</p>}
+
+      <Button
+        type="submit"
+        variant="hero"
+        size="xl"
+        disabled={submitting}
+        className="w-full sm:w-auto"
+      >
+        {submitting ? "Sending…" : "Submit Property"}
       </Button>
     </form>
   );
