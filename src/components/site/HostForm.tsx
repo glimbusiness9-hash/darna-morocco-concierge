@@ -25,6 +25,11 @@ const AMENITIES = [
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please add the property name.").max(120),
+  contact_name: z.string().trim().max(120).optional(),
+  phone: z.string().trim().max(32).optional(),
+  email: z
+    .union([z.literal(""), z.string().trim().email("Please enter a valid email.").max(255)])
+    .optional(),
   city: z.string().trim().min(2, "Please add the city.").max(80),
   description: z.string().trim().min(20, "Please add at least 20 characters.").max(2000),
   guests: z.coerce.number().int().min(1, "At least 1 guest.").max(50),
