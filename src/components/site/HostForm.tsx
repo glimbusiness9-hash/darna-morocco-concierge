@@ -7,6 +7,9 @@ import { Label } from "@/components/ui/label";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, MESSAGES } from "@/lib/darna";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { submitHostApplication } from "@/lib/darna.functions";
+
 
 const PROPERTY_TYPES = ["Apartment", "Villa", "House", "Riad"] as const;
 
