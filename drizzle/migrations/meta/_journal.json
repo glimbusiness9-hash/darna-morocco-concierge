@@ -15,6 +15,13 @@
       "when": 1788615079894,
       "tag": "0001_property_photos_storage_policies",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1788791597152,
+      "tag": "0002_admin_roles_and_policies",
+      "breakpoints": true
     }
   ]
 }
