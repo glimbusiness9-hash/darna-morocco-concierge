@@ -5,7 +5,7 @@
  */
 
 export const WHATSAPP_NUMBER = "212676777399";
-export const WHATSAPP_DISPLAY = "+212 6 76 777 399";
+export const WHATSAPP_DISPLAY = "+212676777399";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export const MESSAGES = {
