@@ -13,12 +13,14 @@ import { InquiryForm } from "@/components/site/InquiryForm";
 import { FinalCta } from "@/components/site/FinalCta";
 import { Footer } from "@/components/site/Footer";
 import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
+import { approvedPropertiesQuery } from "@/lib/propertyQueries";
 
 const title = "darna — Your Personal Concierge for Morocco";
 const description =
   "Discover accommodation, activities, transportation and custom-made experiences in Tangier, Tetouan, Chefchaouen and Northern Morocco with darna.";
 
 export const Route = createFileRoute("/")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(approvedPropertiesQuery),
   head: () => ({
     meta: [
       { title },
