@@ -54,6 +54,8 @@ export function Accommodation() {
           ))}
         </div>
 
+        <PropertyListings />
+
         <Reveal delay={100} className="mt-12 flex flex-wrap items-center gap-3">
           <span className="eyebrow text-muted-foreground">We also cover</span>
           {MORE.map((m) => (
