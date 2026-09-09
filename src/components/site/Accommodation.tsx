@@ -5,6 +5,7 @@ import { waLink, MESSAGES } from "@/lib/darna";
 import tangierAsset from "@/assets/tangier-real.jpg.asset.json";
 import tetouanAsset from "@/assets/tetouan-real.webp.asset.json";
 import chefchaouenAsset from "@/assets/chefchaouen-real.jpg.asset.json";
+import { PropertyListings } from "./PropertyListings";
 
 const DESTINATIONS = [
   { name: "Tangier", line: "Stay by the Mediterranean.", img: tangierAsset.url },

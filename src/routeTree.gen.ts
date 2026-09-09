@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BecomeAHostRouteImport } from './routes/become-a-host'
 import { Route as AuthenticatedAdminRouteRouteImport } from './routes/_authenticated/admin/route'
+import { Route as StaysIdRouteImport } from './routes/stays.$id'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin/index'
 import { Route as AuthenticatedAdminInquiriesRouteImport } from './routes/_authenticated/admin/inquiries'
 import { Route as AuthenticatedAdminPropertiesRouteImport } from './routes/_authenticated/admin/properties'
@@ -42,6 +43,11 @@ const AuthenticatedAdminRouteRoute = AuthenticatedAdminRouteRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const StaysIdRoute = StaysIdRouteImport.update({
+  id: '/stays/$id',
+  path: '/stays/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/become-a-host': typeof BecomeAHostRoute
   '/admin': typeof AuthenticatedAdminRouteRouteWithChildren
+  '/stays/$id': typeof StaysIdRoute
   '/admin/inquiries': typeof AuthenticatedAdminInquiriesRoute
   '/admin/properties': typeof AuthenticatedAdminPropertiesRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/become-a-host': typeof BecomeAHostRoute
+  '/stays/$id': typeof StaysIdRoute
   '/admin/inquiries': typeof AuthenticatedAdminInquiriesRoute
   '/admin/properties': typeof AuthenticatedAdminPropertiesRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/become-a-host': typeof BecomeAHostRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteRouteWithChildren
+  '/stays/$id': typeof StaysIdRoute
   '/_authenticated/admin/inquiries': typeof AuthenticatedAdminInquiriesRoute
   '/_authenticated/admin/properties': typeof AuthenticatedAdminPropertiesRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/become-a-host'
     | '/admin'
+    | '/stays/$id'
     | '/admin/inquiries'
     | '/admin/properties'
     | '/admin/'
@@ -103,6 +113,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/become-a-host'
+    | '/stays/$id'
     | '/admin/inquiries'
     | '/admin/properties'
     | '/admin'
@@ -113,6 +124,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/become-a-host'
     | '/_authenticated/admin'
+    | '/stays/$id'
     | '/_authenticated/admin/inquiries'
     | '/_authenticated/admin/properties'
     | '/_authenticated/admin/'
@@ -123,6 +135,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   BecomeAHostRoute: typeof BecomeAHostRoute
+  StaysIdRoute: typeof StaysIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin'
       preLoaderRoute: typeof AuthenticatedAdminRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/stays/$id': {
+      id: '/stays/$id'
+      path: '/stays/$id'
+      fullPath: '/stays/$id'
+      preLoaderRoute: typeof StaysIdRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin/': {
       id: '/_authenticated/admin/'
@@ -220,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   BecomeAHostRoute: BecomeAHostRoute,
+  StaysIdRoute: StaysIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
